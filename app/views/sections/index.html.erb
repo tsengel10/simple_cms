@@ -1,0 +1,38 @@
+<% @page_title = "Sections" %>
+
+<%= link_to("<< Back to List", {:controller => 'pages',  :action => 'index', :subject_id => @page.subject_id}) %>
+
+<div>
+	<h2>Sections</h2>
+	<%= link_to("Add New Section", {:action => 'new', :page_id => @page.id}, :class => "action new") %>
+	
+	<p>Number of Sections: <%= @section_count %></p>
+
+	<table>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Subject</th>
+			<th>Visible</th>
+			<th>Content type</th>
+			<th>Content</th>
+			<th>Actions</th>
+		</tr>
+		<% @sections.each do |section| %>
+		<tr>
+			<td><%= section.position %></td>
+			<td><%= section.name %></td>
+			<td><%= section.visible ? 'Yes' : 'No' %></td>
+			<td><%= section.content_type%></td>
+			<td><%= section.content %></td>
+			<td>
+				<%= link_to("Show", {:action => 'show', :id => section.id, :page_id => section.page_id}, :class => 'action show') %>
+				<%= link_to("Edit", {:action => 'edit', :id => section.id, :page_id => section.page_id}, :class => 'action edit') %>
+				<%= link_to("Delete", {:action => 'delete', :id => section.id, :page_id => section.page_id}, :class => 'action delete') %>
+
+			</td>
+		</tr>
+		<% end %>
+	</table>
+		<div><%= link_to("Back to Admin menu", 
+	:controller => 'access' ) %></div>
+</div>

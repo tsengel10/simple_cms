@@ -1,0 +1,28 @@
+<%= error_messages_for(@admin_user) %>
+
+<table>
+	<tr>
+		<th><%= f.label(:first_name, 'First Name') %></th>
+		<td><%= f.text_field(:first_name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:last_name, 'Last Name') %></th>
+		<td><%= f.text_field(:last_name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:email, 'Email') %></th>
+		<td><%= f.text_field(:email) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:username, 'Username') %></th>
+		<td><%= f.text_field(:username) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:password, 'password') %></th>
+		<% if @admin_user.new_record? %>
+			<td><%= f.password_field(:password) %></td>
+		<% else %>
+			<td><%= f.label(:password, @admin_user.password_digest) %></td>
+		<% end %>
+	</tr>
+</table>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Simple CMS | <%= @page_title || "Admin" %></title>
+
+	  <%= stylesheet_link_tag('application', :media => 'all') %>
+	  
+	  <%= javascript_include_tag('application') %>
+
+	</head>
+	<body>
+	<div id="header">
+		<h2 class="hero_link"><%= link_to("Simple CMS Admin", {:controller => 'access', :action => 'index'}) %></h2>
+	</div>
+	<div id="main">
+		<% if !flash[:notice].blank? %>
+			<div>
+				<%= flash[:notice] %>
+			</div>
+		<% end %>
+
+		<div id="content">
+			<!-- Before yield -->
+			<%= yield %>
+			<!-- After yield -->
+		</div>
+	</div>
+
+	<div id="footer">
+		<p>&copy; Simple CMS for rails beginners / Tsengel Gerelsaikhan</p>
+	</div>
+	</body>
+</html>
