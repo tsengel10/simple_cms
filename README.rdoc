@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is very simple content management system for rails beginners
 
-Things you may want to cover:
+What you will need to do in order to run this project is
 
-* Ruby version
+* configure config/database.yml to connect to db server
 
-* System dependencies
+* have a database called 'simple_cms_dvelopment' or whatever you configured in your database.yml
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* run rake 'db:migrate' to have all the tables 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+That's it. Simple...
